@@ -1,0 +1,38 @@
+from flask import Flask, render_template
+
+
+app = Flask('')
+@app.route('/')
+def project():
+
+	context = dict()
+	context['Company'] = 'Alpha Skala'
+	sity = {}
+	sity['twitter'] = 'https://twitter.com/?lang=uk'
+	sity['instagram'] = 'https://www.instagram.com/'
+	sity['facebook'] = 'https://uk-ua.facebook.com/'
+	order = list()
+	order.append({'name': 'Лижи', 'cost': '100 грн'})
+	order.append({'name': 'Сноуборд', 'cost': '200 грн'})
+	order.append({'name': 'Санки', 'cost': '300 грн'})
+	order.append({'name': 'Удочка', 'cost': '400 грн'})
+	order.append({'name': 'Крючки', 'cost': '500 грн'})
+	order.append({'name': 'Рюкзак', 'cost': '600 грн'})
+	order.append({'name': 'Кружка', 'cost': '700 грн'})
+	order.append({'name': 'Матрас', 'cost': '800 грн'})
+	order.append({'name': 'Палатка', 'cost': '900 грн'})
+	order.append({'name': 'Лодка', 'cost': '1000 грн'})
+	order.append({'name': 'Лижи', 'cost': '590 грн'})
+	order.append({'name': 'Сноуборд', 'cost': '280 грн'})
+	order.append({'name': 'Санки', 'cost': '302 грн'})
+	order.append({'name': 'Удочка', 'cost': '900 грн'})
+	order.append({'name': 'Крючки', 'cost': '600 грн'})
+	order.append({'name': 'Рюкзак', 'cost': '890 грн'})
+	order.append({'name': 'Кружка', 'cost': '340 грн'})
+	order.append({'name': 'Матрас', 'cost': '890 грн'})
+	order.append({'name': 'Палатка', 'cost': '610 грн'})
+	order.append({'name': 'Лодка', 'cost': '1100 грн'})
+
+	return render_template('base.html', info = context, orders = order, sity = sity)
+
+app.run(debug=True)

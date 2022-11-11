@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ info.Company}}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap" rel="stylesheet">
+    <title>DOCS</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <div class="div_image">
+        <img src="/static/images/camping.jpg">
+        <img src="/static/images/images.jpg">
+        <img src="/static/images/fish.jpg">
+    </div>
+
+    <header>
+         <p>
+            {{ info.Company }}
+        </p>
+        <div>
+        <button class="button_1">Кошик</button>
+        <button class="button_enter_1">Вхід</button>
+        <button class="button_enter_2">Реєстрація</button>
+        </div>
+    </header>
+    <main>
+        {% for order in orders %}
+            <li><p>{{order.name}} : {{order.cost}}</p>
+                <button> Додати до кошику</button>
+            </li>
+        {% endfor %}
+    </main>
+    
+    <footer>
+        <div class="social">
+            <h3>Інтернет-магазин в соц. мережах</h3>
+            <div class="icondiv">
+                <a href="{{sity.twitter}}"><ion-icon name="logo-twitter"></ion-icon></a>
+                <a href="{{sity.facebook}}"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="{{sity.instagram}}"><ion-icon name="logo-instagram"></ion-icon></a>
+            </div>
+        </div>
+        <div class="info">
+            <p>Номер: 380955285484</p>
+            <p>Адресс: вул.Героїв 65</p> 
+            <p>Графік роботи: 9:00 - 18:00 пн - пт</p> 
+            <p>Пошта: drop@gmail.com</p> 
+        </div>
+    </footer>
+        
+</body>
+</html>
+
